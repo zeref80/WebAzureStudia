@@ -1,0 +1,61 @@
+.container-fluid {
+   height: 100%;
+    width: 100%;
+ }
+ 
+ .bg-color-purple {
+    background-color: rgb(127, 76, 175);
+    color: rgb(255 255 255);
+    text-align: center;
+ }
+ .bg-color-gray {
+    background-color: rgb(231, 231, 231);
+    min-height: 67vh;
+    max-height: 67vh;
+    overflow-y: scroll;
+ }
+ 
+ .message {
+    padding: 3px 10px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    text-align: left;
+    max-width: 70%;
+ }
+ 
+ .message-header {
+    font-size: small;
+    text-align: left;
+ }
+ 
+ .my-message {
+    margin-left: auto;
+    background-color: rgb(191, 155, 224);
+ }
+ .others-message {
+    background-color: rgb(197, 196, 196);
+    margin-right: auto;
+ }
+ .send-message {
+    min-height: 5vh;
+ }
+ 
+ .max-height-90 {
+    max-height: 90vh;
+    min-height: 90vh;
+    display: flex;
+ }
+ 
+ .d-flex {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+ }
+
+ .button {
+   text-decoration: none;
+   color: white;
+ }
+
+ 
