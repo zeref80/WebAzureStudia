@@ -1,13 +1,14 @@
     <?php
+	error_log("0", 0);
     session_start();
-
+	error_log("1", 0);
     if (!isset($_SESSION['user_id'])) {
         header('Location: login.php');
         exit;
     }
 
     require_once 'pdo.php';
-
+	error_log("2", 0);
     if (isset($_GET['private_id'])) {
         $private_id = intval($_GET['private_id']);
 
@@ -23,7 +24,7 @@
             exit;
         }
     }
-
+	error_log("3", 0);
     $stmt = $pdo->query('SELECT id, AES_DECRYPT(username,"ChatApp") AS decrypted FROM users');
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
         if($row['id']==$private_id){
@@ -51,9 +52,9 @@
 
         $stmt->execute();
     }
-
+	error_log("5", 0);
     ?>
-
+	
     <!DOCTYPE html> 
     <html lang="en">
     <head>
