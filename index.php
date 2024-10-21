@@ -79,7 +79,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['content'])) {
             <form>
                 <button type='button' class='btn btn-secondary'><a href='index.php' style='text-decoration: none; color: white';>General</a></button>
                 <button type='button' class='btn btn-secondary'><a href='index.php' style='text-decoration: none; color: white';>General2</a></button>
-                <button type='button' class='btn btn-secondary'><a href='index.php' style='text-decoration: none; color: white';>General3</a></button>
             </form>
             <div>You're talking on <b>General channel</b></div>
         </div>
