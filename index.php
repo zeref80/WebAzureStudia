@@ -76,7 +76,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['content'])) {
             <a href="logout.php" style="color: white">Logout</a>
             <h2 class="col-12">ChatApp</h2>
             <h4 class="col-5"><?php echo "Welcome $username!"; ?></h4>
-            <button type='button' class='btn btn-secondary'><a href='index.php' style='text-decoration: none; color: white';>General</a></button>
+            <button type='button' class='btn btn-secondary'><a href='index.php' style='text-decoration: none; color: white';>Generall</a></button>
             <div>You're talking on <b>General channel</b></div>
         </div>
         <div id="chat-box" class="row p-2 bg-color-gray">
