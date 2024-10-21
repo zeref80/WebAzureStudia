@@ -76,19 +76,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['content'])) {
             <a href="logout.php" style="color: white">Logout</a>
             <h2 class="col-12">ChatApp</h2>
             <h4 class="col-5"><?php echo "Welcome $username!"; ?></h4>
-            <form method="get" action="private_chat.php">
             <button type='button' class='btn btn-secondary'><a href='index.php' style='text-decoration: none; color: white';>General</a></button>
-            <?php
-                $stmt = $pdo->prepare('SELECT id, AES_DECRYPT(username,"ChatApp") AS username FROM users WHERE id != ?');
-                $stmt->execute([$user_id]);
-                $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-                foreach ($users as $user) {
-                    echo "<button type='button' class='btn btn-secondary'><a href='private_chat.php?private_id=".$user['id']."' style='text-decoration: none;
-                    color: white';>".$user['username']."</a></button> ";
-                }
-            ?>
-            </form>
             <div>You're talking on <b>General channel</b></div>
         </div>
         <div id="chat-box" class="row p-2 bg-color-gray">
