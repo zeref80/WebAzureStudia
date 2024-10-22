@@ -92,7 +92,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['content'])) {
             <h4 class="col-5"><?php echo "Welcome $username!"; ?></h4>
             <form method="post" action="">
                 <button type='submit' name='gen1' class='btn btn-secondary'><style='text-decoration: none; color: white';>General</a></button>
-                <button type='submit' name='gen2' class='btn btn-secondary'><style='text-decoration: none; color: white';>General2</a></button>
+                <button type='submit' name='gen2' class='btn btn-secondary'><style='text-decoration: none; color: white';>General-2</a></button>
             </form>
             <div>You're talking on <b>General channel</b></div>
         </div>
