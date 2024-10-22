@@ -88,13 +88,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['content'])) {
         <div class="row p-2 bg-color-purple justify-content-center">
             <a href="logout.php" style="color: white">Logout</a>
             <h2 class="col-12">ChatApp</h2>
-            <h1>Current Session Value: <?php echo $_SESSION['general_id']; ?></h1>
             <h4 class="col-5"><?php echo "Welcome $username!"; ?></h4>
             <form method="post" action="">
                 <button type='submit' name='gen1' class='btn btn-secondary'><style='text-decoration: none; color: white';>General</a></button>
                 <button type='submit' name='gen2' class='btn btn-secondary'><style='text-decoration: none; color: white';>General-2</a></button>
             </form>
-            <div>You're talking on </div>
+            <div>You're talking on General <?php echo $_SESSION['general_id']; ?> channel </div>
         </div>
         <div id="chat-box" class="row p-2 bg-color-gray">
             <!-- Wyświetlanie wiadomości -->
