@@ -19,7 +19,7 @@ $iv = 'a1b2c3d4e5f6g7h8';
 $key = 'ChatApp';
 
 while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-    if ($row['messageType'] === $_SESSION['general_id']) {
+    if ($row['messageType'] == $_SESSION['general_id']) {
         $messageDate = strtotime($row['timestamp']);
         $currentDate = strtotime(date('Y-m-d'));
         $diff = $currentDate - $messageDate;
