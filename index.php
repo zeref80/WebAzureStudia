@@ -93,7 +93,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['content'])) {
                 <button type='submit' name='gen1' class='btn btn-secondary'><style='text-decoration: none; color: white';>General</a></button>
                 <button type='submit' name='gen2' class='btn btn-secondary'><style='text-decoration: none; color: white';>General-2</a></button>
             </form>
-            <div>You're talking on General <?php echo $_SESSION['general_id']; ?> channel </div>
+            <div>You're talking on <b> General <?php echo $_SESSION['general_id']; ?> </b> </div>
         </div>
         <div id="chat-box" class="row p-2 bg-color-gray">
             <!-- Wyświetlanie wiadomości -->
