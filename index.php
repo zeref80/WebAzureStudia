@@ -14,12 +14,10 @@ if (!isset($_SESSION['general_id'])) {
     $_SESSION['general_id'] = 1;
 }
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    if (isset($_POST['gen1'])) {
-        $_SESSION['general_id'] = 1;
-    } elseif (isset($_POST['gen2'])) {
-        $_SESSION['general_id'] = 2;
-    }
+if (isset($_POST['gen1'])) {
+    $_SESSION['general_id'] = 1;
+} elseif (isset($_POST['gen2'])) {
+    $_SESSION['general_id'] = 2;
 }
 
 $user_id = $_SESSION['user_id'];
