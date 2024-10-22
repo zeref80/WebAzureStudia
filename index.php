@@ -8,6 +8,18 @@ if (!isset($_SESSION['user_id'])) {
 
 require_once 'pdo.php';
 
+if (!isset($_SESSION['general_id'])) {
+    $_SESSION['general_id'] = 1;
+}
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if (isset($_POST['gen1'])) {
+        $_SESSION['general_id'] = 1;
+    } elseif (isset($_POST['gen2'])) {
+        $_SESSION['general_id'] = 2;
+    }
+}
+
 $user_id = $_SESSION['user_id'];
 $stmt = $pdo->prepare('SELECT AES_DECRYPT(username,"ChatApp") AS decrypted from users WHERE id = :user_id;');
 $stmt->bindParam(':user_id', $user_id, PDO::PARAM_INT);
@@ -75,10 +87,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['content'])) {
         <div class="row p-2 bg-color-purple justify-content-center">
             <a href="logout.php" style="color: white">Logout</a>
             <h2 class="col-12">ChatApp</h2>
+            <h1>Current Session Value: <?php echo $_SESSION['general_id']; ?></h1>
             <h4 class="col-5"><?php echo "Welcome $username!"; ?></h4>
-            <form>
-                <button type='button' class='btn btn-secondary'><a href='index.php' style='text-decoration: none; color: white';>General</a></button>
-                <button type='button' class='btn btn-secondary'><a href='index.php' style='text-decoration: none; color: white';>General2</a></button>
+            <form method="post" action="">
+                <button type='button' name='gen1' class='btn btn-secondary'><a href='index.php' style='text-decoration: none; color: white';>General</a></button>
+                <button type='button' name='gen2' class='btn btn-secondary'><a href='index.php' style='text-decoration: none; color: white';>General2</a></button>
             </form>
             <div>You're talking on <b>General channel</b></div>
         </div>
