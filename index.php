@@ -35,8 +35,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['content'])) {
     $key = 'ChatApp';
     $encrypted_content = openssl_encrypt($content, 'AES-256-CBC', $key, 0, $iv);
 
-    $stmt = $pdo->prepare('INSERT INTO messages (messageType, sender_id, content, timestamp) VALUES (1, :user_id, :encrypted_content, CURRENT_TIMESTAMP)');
+    $stmt = $pdo->prepare('INSERT INTO messages (messageType, sender_id, content, timestamp) VALUES (:general_id, :user_id, :encrypted_content, CURRENT_TIMESTAMP)');
     
+    $stmt->bindParam(':general_id', $_SESSION['general_id'], PDO::PARAM_INT);
     $stmt->bindParam(':user_id', $user_id, PDO::PARAM_INT);
     $stmt->bindParam(':encrypted_content', $encrypted_content, PDO::PARAM_STR);
     
