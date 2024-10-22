@@ -9,7 +9,7 @@ if (!isset($_SESSION['user_id'])) {
 
 header('index.php');
 
-$stmt = $pdo->prepare('SELECT messages.content, messages.timestamp, AES_DECRYPT(username,"ChatApp") AS us, messages.sender_id, messages.receiver_id 
+$stmt = $pdo->prepare('SELECT messages.content, messages.timestamp, AES_DECRYPT(username,"ChatApp") AS us, messages.sender_id, messages.messageType
                        FROM messages
                        INNER JOIN users ON messages.sender_id = users.id
                        ORDER BY messages.timestamp ASC');
