@@ -90,8 +90,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['content'])) {
             <h2 class="col-12">ChatApp</h2>
             <h4 class="col-5"><?php echo "Welcome $username!"; ?></h4>
             <form method="post" action="">
-                <button type='submit' name='gen1' class='btn btn-secondary'><style='text-decoration: none; color: white';>General</a></button>
-                <button type='submit' name='gen2' class='btn btn-secondary'><style='text-decoration: none; color: white';>General-2</a></button>
+                <button type='submit' name='gen1' class='btn btn-secondary'><style='text-decoration: none; color: white';>General 1</a></button>
+                <button type='submit' name='gen2' class='btn btn-secondary'><style='text-decoration: none; color: white';>General 2</a></button>
             </form>
             <div>You're talking on <b> General <?php echo $_SESSION['general_id']; ?> </b> </div>
         </div>
