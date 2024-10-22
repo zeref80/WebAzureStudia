@@ -90,8 +90,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['content'])) {
             <h1>Current Session Value: <?php echo $_SESSION['general_id']; ?></h1>
             <h4 class="col-5"><?php echo "Welcome $username!"; ?></h4>
             <form method="post" action="">
-                <button type='submit' name='gen1' class='btn btn-secondary'><a href='index.php' style='text-decoration: none; color: white';>General</a></button>
-                <button type='submit' name='gen2' class='btn btn-secondary'><a href='index.php' style='text-decoration: none; color: white';>General2</a></button>
+                <button type='submit' name='gen1' class='btn btn-secondary'><style='text-decoration: none; color: white';>General</a></button>
+                <button type='submit' name='gen2' class='btn btn-secondary'><style='text-decoration: none; color: white';>General2</a></button>
             </form>
             <div>You're talking on <b>General channel</b></div>
         </div>
