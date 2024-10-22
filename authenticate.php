@@ -26,6 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $stmt3 = $pdo->prepare('UPDATE login SET isLogged = 1 WHERE user_id = ?');
                 $stmt3->bindParam(1, $_SESSION['user_id'], PDO::PARAM_INT);
                 $stmt3->execute();
+                $_SESSION['general_id'] = 1;
                 header('Location: index.php');
                 exit;
             }
