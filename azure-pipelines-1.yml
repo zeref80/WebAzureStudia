@@ -1,0 +1,31 @@
+trigger:
+  branches:
+    include:
+      - main  # lub inna nazwa gałęzi, którą chcesz monitorować
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- checkout: self
+
+- task: SonarCloudPrepare@1
+  inputs:
+    SonarCloud: '$(SONAR_TOKEN)' # Korzysta z tokena jako sekretu
+    organization: 'zeref80'  # wprowadź swoją nazwę organizacji
+    projectKey: 'zeref80'          # klucz projektu SonarCloud
+    projectName: 'WebAzureStudia'        # nazwa projektu SonarCloud
+    scannerMode: 'CLI'
+    configMode: 'manual'
+    cliProjectKey: 'zeref80'
+    cliProjectName: 'WebAzureStudia'
+    extraProperties: |
+      sonar.projectVersion=1.0
+      sonar.sources=.
+
+- task: SonarCloudAnalyze@1
+  displayName: 'Run SonarCloud analysis'
+
+- task: SonarCloudPublish@1
+  inputs:
+    pollingTimeoutSec: '300'
