@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-header("Cache-Control: no-cache, must-revalidate");
+//header("Cache-Control: no-cache, must-revalidate");
 
 if (!isset($_SESSION['user_id'])) {
     header('Location: login.php');
